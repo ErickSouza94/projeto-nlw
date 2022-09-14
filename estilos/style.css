@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+header img{
+    box-sizing: border-box;
+    border-radius: 50%;
+    width: 140px;
+    height: 131px;    
+
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    border-radius: 50%;
+    padding: 3px;
+}
+
+body {
+    background-image: url(../imagens/background.jpg);
+    background-position: top center;
+    background-size: 100% auto; /*100% da largura disponível e altura automática (auto)*/
+    background-repeat: no-repeat;
+    background-color: #121214; /*cor da parte final para dar continuidade à parte de baixo do background.*/
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%; /* Ou 38px */
+}
+
+main {
+    max-width: 580px;
+    height: 800px;
+    width: 90%;
+    margin: auto;
+    margin-top: 25px;
+
+    display: flex; /* também poderia ser DISPLAY: GRID; */
+    flex-direction: column;
+    gap: 24px;
+}
+
+section{
+    color: white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top: 4px; /* para dar um espaço no top para que possa aparecer um pouco da borda colorida */
+    border-radius: 10px;
+}
+
+section div{
+    background-color: #2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+    
+}
+
+section h2{
+    letter-spacing: -0.47px; 
+}
+
+section p{
+    letter-spacing: -0.18px;
+}
+/* 
+    LETTER-SPACING DÁ UMA DIFERENÇA MÍNIMA, MAS É INTERESSANTE DEIXAR.
+*/
+
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.lista-jogos img{
+    width: 90px;
+    border-radius: 8px;  
+}
+
+.lista-canais img{
+    border-radius: 50%;
+    width: 70px;
+}
