@@ -10,19 +10,24 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    padding-top: 20px;
+    padding-top: 32px;
+    height: 160px;
 }
 
-header img{
-    box-sizing: border-box;
-    border-radius: 50%;
-    width: 140px;
-    height: 131px;    
 
-    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+header img{
+    width: 130px;
+    height: 130px;    
     border-radius: 50%;
-    padding: 3px;
+    
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding: 4px;
+    
+    transition: transform .3s; /* Uma "função" para o hover (transform: scale() */
+}
+
+header img:hover{
+    transform: scale(1.2);
 }
 
 body {
@@ -42,8 +47,7 @@ main {
     max-width: 580px;
     height: 800px;
     width: 90%;
-    margin: auto;
-    margin-top: 25px;
+    margin: 32px auto;  
 
     display: flex; /* também poderia ser DISPLAY: GRID; */
     flex-direction: column;
@@ -80,9 +84,10 @@ ul{
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* para itens quebrarem e ir para a próxima linha, caso tenha mais */
     gap: 16px;
     margin-top: 24px;
+
 }
 
 .lista-jogos img{
@@ -93,4 +98,67 @@ ul{
 .lista-canais img{
     border-radius: 50%;
     width: 70px;
+    border: 1px solid #443E54;
+}
+
+/* HOVERS (transitions) */
+
+li img:hover{
+    border: 2px solid rgba(0, 0, 0, 0.322);
+    transform: translate(-3px, -3px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.336);
+    transition: transform 0.3, border 1s;
+}
+
+li svg:hover{
+    transform: translate(-3px, -3px);
+    transition: transform 0.3, border 1s;
+}
+
+/* ANIMAÇÕES */
+
+header img{
+    animation: fromTop .4s;
+    /* Para demorar 0.8 segundos até que se faça toda a animação. Devemos ter pelo menos 2 propriedades: O nome da animação e o tempo que ela vai levar. */
+}
+/* vai vir de cima para baixo */
+@keyframes fromTop{ /* fromTop é um nome inventado para poder identificar a ação */
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main section{
+    animation: fromBottom .8s backwards;
+}
+
+main section#jogos{
+    animation-delay: 0;
+}
+
+main section#canais{
+    animation-delay: .4s;
+}
+
+main section#redes{
+    animation-delay: .8s;
+}
+
+@keyframes fromBottom{
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
